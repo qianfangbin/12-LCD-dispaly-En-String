@@ -701,7 +701,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x5EEA1DF2)
-F (..\..\User\main.c)(0x5EEA1DF2)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc-I E:\STM32_CODE\12-LCD显示英文\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
+F (..\..\User\main.c)(0x5FDFDBF3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc-I E:\STM32_CODE\12-LCD显示英文\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5EEA1DF2)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x5EEA1DF2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -730,7 +730,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x5EEA1DF2)
-I (..\..\User\./lcd/bsp_ili9341_lcd.h)(0x5FDFC199)
+I (..\..\User\./lcd/bsp_ili9341_lcd.h)(0x5FDFC40E)
 I (..\..\User\./font/fonts.h)(0x5EEA1DF2)
 I (..\..\User\./usart/bsp_usart.h)(0x5EEA1DF2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
@@ -764,8 +764,8 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x5EEA1DF2)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x5EEA1DF2)
-F (..\..\User\Lcd\bsp_ili9341_lcd.c)(0x5FDFB5AB)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc-I E:\STM32_CODE\12-LCD显示英文\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_ili9341_lcd.o --omf_browse ..\..\output\bsp_ili9341_lcd.crf --depend ..\..\output\bsp_ili9341_lcd.d)
-I (..\..\User\./lcd/bsp_ili9341_lcd.h)(0x5FDFC199)
+F (..\..\User\Lcd\bsp_ili9341_lcd.c)(0x5FDFD974)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\Libraries\CMSIS -I..\..\User -I..\..\Libraries\FWlib\inc-I E:\STM32_CODE\12-LCD显示英文\Project\RVMDK（uv5）\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_ili9341_lcd.o --omf_browse ..\..\output\bsp_ili9341_lcd.crf --depend ..\..\output\bsp_ili9341_lcd.d)
+I (..\..\User\./lcd/bsp_ili9341_lcd.h)(0x5FDFC40E)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5EEA1DF2)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x5EEA1DF2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)

@@ -445,7 +445,7 @@ void ILI9341_Init ( void )
 	ILI9341_Rst ();
 	ILI9341_REG_Config ();
 	
-	//设置默认扫描方向，其中 6 模式为大部分液晶例程的默认显示方向  
+	//设置默认扫描方向，其中模式6为大部分液晶例程的默认显示方向  
 	ILI9341_GramScan(LCD_SCAN_MODE);
 }
 
@@ -577,7 +577,7 @@ void ILI9341_GramScan ( uint8_t ucOption )
 	ILI9341_Write_Data ( (LCD_Y_LENGTH-1)&0xFF );				/* y 结束坐标低8位 */
 
 	/* write gram start */
-	ILI9341_Write_Cmd ( CMD_SetPixel );	
+	ILI9341_Write_Cmd ( CMD_SetPixel );	//后面直接发送像素数据即可
 }
 
 
@@ -752,10 +752,10 @@ void ILI9341_DrawLine ( uint16_t usX1, uint16_t usY1, uint16_t usX2, uint16_t us
 		lIncrease_X = 0;//垂直线 
 	
 	else 
-  { 
-    lIncrease_X = -1;
-    lDelta_X = - lDelta_X;
-  } 
+    { 
+        lIncrease_X = -1;
+        lDelta_X = - lDelta_X;
+    } 
 
 	
 	if ( lDelta_Y > 0 )
@@ -765,10 +765,10 @@ void ILI9341_DrawLine ( uint16_t usX1, uint16_t usY1, uint16_t usX2, uint16_t us
 		lIncrease_Y = 0;//水平线 
 	
 	else 
-  {
-    lIncrease_Y = -1;
-    lDelta_Y = - lDelta_Y;
-  } 
+    {
+        lIncrease_Y = -1;
+        lDelta_Y = - lDelta_Y;
+    } 
 
 	
 	if (  lDelta_X > lDelta_Y )
@@ -863,18 +863,19 @@ void ILI9341_DrawCircle ( uint16_t usX_Center, uint16_t usY_Center, uint16_t usR
 		
 		
 		if ( ucFilled ) 			
-			for ( sCountY = sCurrentX; sCountY <= sCurrentY; sCountY ++ ) 
+		{
+        	for ( sCountY = sCurrentX; sCountY <= sCurrentY; sCountY ++ ) 
 			{                      
 				ILI9341_SetPointPixel ( usX_Center + sCurrentX, usY_Center + sCountY );           //1，研究对象 
 				ILI9341_SetPointPixel ( usX_Center - sCurrentX, usY_Center + sCountY );           //2       
 				ILI9341_SetPointPixel ( usX_Center - sCountY,   usY_Center + sCurrentX );           //3
 				ILI9341_SetPointPixel ( usX_Center - sCountY,   usY_Center - sCurrentX );           //4
 				ILI9341_SetPointPixel ( usX_Center - sCurrentX, usY_Center - sCountY );           //5    
-        ILI9341_SetPointPixel ( usX_Center + sCurrentX, usY_Center - sCountY );           //6
+                ILI9341_SetPointPixel ( usX_Center + sCurrentX, usY_Center - sCountY );           //6
 				ILI9341_SetPointPixel ( usX_Center + sCountY,   usY_Center - sCurrentX );           //7 	
-        ILI9341_SetPointPixel ( usX_Center + sCountY,   usY_Center + sCurrentX );           //0				
+                ILI9341_SetPointPixel ( usX_Center + sCountY,   usY_Center + sCurrentX );           //0				
 			}
-		
+        }
 		else
 		{          
 			ILI9341_SetPointPixel ( usX_Center + sCurrentX, usY_Center + sCurrentY );             //1，研究对象
@@ -885,7 +886,7 @@ void ILI9341_DrawCircle ( uint16_t usX_Center, uint16_t usY_Center, uint16_t usR
 			ILI9341_SetPointPixel ( usX_Center + sCurrentX, usY_Center - sCurrentY );             //6
 			ILI9341_SetPointPixel ( usX_Center + sCurrentY, usY_Center - sCurrentX );             //7 
 			ILI9341_SetPointPixel ( usX_Center + sCurrentY, usY_Center + sCurrentX );             //0
-    }			
+        }			
 		
 		
 		sCurrentX ++;
@@ -898,11 +899,8 @@ void ILI9341_DrawCircle ( uint16_t usX_Center, uint16_t usY_Center, uint16_t usR
 		{
 			sError += 10 + 4 * ( sCurrentX - sCurrentY );   
 			sCurrentY --;
-		} 	
-		
-		
-	}
-	
+		} 		
+	}	
 	
 }
 
@@ -954,9 +952,9 @@ void ILI9341_DispChar_EN ( uint16_t usX, uint16_t usY, const char cChar )
 /**
  * @brief  在 ILI9341 显示器上显示英文字符串
  * @param  line ：在特定扫描方向下字符串的起始Y坐标
-  *   本参数可使用宏LINE(0)、LINE(1)等方式指定文字坐标，
-  *   宏LINE(x)会根据当前选择的字体来计算Y坐标值。
-	*		显示中文且使用LINE宏时，需要把英文字体设置成Font8x16
+  * 本参数可使用宏LINE(0)、LINE(1)等方式指定文字坐标，
+  * 宏LINE(x)会根据当前选择的字体来计算Y坐标值。
+  *	显示中文且使用LINE宏时，需要把英文字体设置成Font8x16
  * @param  pStr ：要显示的英文字符串的首地址
  * @note 可使用LCD_SetBackColor、LCD_SetTextColor、LCD_SetColors函数设置颜色
  * @retval 无
@@ -991,7 +989,7 @@ void ILI9341_DispStringLine_EN (  uint16_t line,  char * pStr )
 
 
 /**
- * @brief  在 ILI9341 显示器上显示英文字符串
+ * @brief  在 ILI9341 显示器上按设定起始坐标显示英文字符串
  * @param  usX ：在特定扫描方向下字符的起始X坐标
  * @param  usY ：在特定扫描方向下字符的起始Y坐标
  * @param  pStr ：要显示的英文字符串的首地址
